@@ -2,224 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exoliner Serverside</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="/Logo-transparent.png" type="image/png">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            overflow-x: hidden;
-            background: linear-gradient(to bottom, #030712, #111827);
-        }
-
-        header {
-            width: 100%;
-            padding: 20px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            box-sizing: border-box;
-        }
-
-        header .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #fff;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        header nav {
-            display: flex;
-            gap: 20px;
-        }
-
-        header nav a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        header nav a:hover {
-            color: #4CAF50;
-        }
-
-        .main-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-            box-sizing: border-box;
-            max-width: 80%;
-            margin-top: 50px;
-        }
-
-        .main-content h1 {
-            font-size: 36px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            background: linear-gradient(to right, #6a11cb, #2575fc);
-            -webkit-background-clip: text;
-            color: transparent;
-            display: inline-block;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .main-content p {
-            font-size: 18px;
-            color: #ddd;
-            margin-bottom: 30px;
-            line-height: 1.5;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .main-content .buttons {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .main-content .buttons a {
-            padding: 12px 25px;
-            font-size: 18px;
-            text-decoration: none;
-            border-radius: 25px;
-            color: #fff;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .main-content .buttons a:first-child {
-            background-color: #008CBA;
-            transition: background-color 0.3s ease;
-        }
-
-        .main-content .buttons a:first-child:hover {
-            background-color: #007ba7;
-        }
-
-        .main-content .buttons a:last-child {
-            background-color: transparent;
-            border: 2px solid #fff;
-            transition: background-color 0.3s ease;
-        }
-
-        .main-content .buttons a:last-child:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-
-        #grid-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-            background-image:
-                linear-gradient(to right, rgba(128, 128, 128, 0.1) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(128, 128, 128, 0.1) 1px, transparent 1px);
-            background-size: 40px 40px;
-        }
-
-        #phone-explainer {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 80px;
-        }
-
-        #phone-explainer img {
-            width: 250px;
-            height: auto;
-            margin-bottom: 20px;
-        }
-
-        #phone-explainer-text {
-            font-size: 16px;
-            color: #ddd;
-            text-align: center;
-            padding: 0 20px;
-            max-width: 80%;
-            line-height: 1.5;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            header nav {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .main-content h1 {
-                font-size: 28px;
-            }
-
-            .main-content p {
-                font-size: 16px;
-            }
-
-            .main-content .buttons {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .main-content .buttons a {
-                width: 100%;
-                text-align: center;
-            }
-             #phone-explainer img{
-                width: 80%;
-                max-width: 300px;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .main-content {
-                margin-top: 80px;
-            }
-        }
-    </style>
+    <title>Magic Navigation Menu Indicator | Codehal</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">EXOLINER</div>
-        <nav>
-            <a href="#">Dashboard</a>
-            <a href="#">Showcases</a>
-            <a href="#">TOS</a>
-            <a href="#">Pricing</a>
-            <a href="#">Support</a>
-        </nav>
-    </header>
-    <div class="main-content">
-        <h1>Exoliner Serverside</h1>
-        <p>Experience the web-based scripting revolution with military-grade security and unmatched games.</p>
-        <div class="buttons">
-            <a href="#">Get Started</a>
-            <a href="#">Join our Discord</a>
-        </div>
+    <div class="navigation">
+        <ul>
+            <li class="list active">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </span>
+                    <span class="text">Home</span>
+                    <span class="circle"></span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </span>
+                    <span class="text">Profile</span>
+                    <span class="circle"></span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="chatbubble-outline"></ion-icon>
+                    </span>
+                    <span class="text">Message</span>
+                    <span class="circle"></span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="camera-outline"></ion-icon>
+                    </span>
+                    <span class="text">Photos</span>
+                    <span class="circle"></span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="settings-outline"></ion-icon>
+                    </span>
+                    <span class="text">Settings</span>
+                    <span class="circle"></span>
+                </a>
+            </li>
+            <div class="indicator"></div>
+        </ul>
     </div>
-    <div id="phone-explainer">
-        <img src="phone-image.png" alt="Phone Explainer">
-        <p id="phone-explainer-text">
-            Exoliner is a powerful tool that allows you to run scripts and enhance your gaming experience. It's designed with security in mind, ensuring a safe and reliable environment.
-        </p>
-    </div>
-    <div id="grid-background"></div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
