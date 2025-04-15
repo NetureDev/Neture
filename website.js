@@ -1,15 +1,13 @@
 const list = document.querySelectorAll('.list');
 const indicator = document.querySelector('.indicator');
 
-function activeLink() {
-    list.forEach((item) => item.classList.remove('active'));
-    this.classList.add('active');
-}
-
 list.forEach((item, index) => {
-    item.addEventListener('click', function () {
-        activeLink.call(this);
-        // Move the indicator based on index
-        indicator.style.transform = `translateX(calc(70px * ${index}))`;
-    });
+  item.addEventListener('click', () => {
+    // Remove "active" from all
+    list.forEach(i => i.classList.remove('active'));
+    // Add "active" to clicked item
+    item.classList.add('active');
+    // Move the indicator
+    indicator.style.transform = `translateX(calc(70px * ${index}))`;
+  });
 });
