@@ -2,19 +2,156 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navigation Menu Bar Hover Effect | Codehal</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Hercules Lua Obfuscator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="img/hercules_icon_svg.svg" type="image/svg+xml">
 </head>
 <body>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Product</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
-        <span></span>
-    </nav>
+    <div class="container">
+        <header>
+            <a href="/" class="logo-link">
+                <h1><img src="img/hercules_icon_svg.svg" alt="Hercules Logo"> Hercules Lua Obfuscator</h1>
+                <p>Secure your Lua code with powerful obfuscation techniques</p>
+            </a>
+        </header>
+
+        <main>
+            <div class="upload-container">
+                <form id="upload-form">
+                    <div class="file-upload-container">
+                        <div class="upload-icon">
+                            <i class="fas fa-file-upload"></i>
+                        </div>
+                        <p>Select a Lua (.lua) or text (.txt) file containing Lua code to obfuscate</p>
+                        <p class="drag-info">Drag & drop your file here or</p>
+                        <label for="file-input" class="file-input-label">Select a file</label>
+                        <input type="file" id="file-input" accept=".lua,.txt" hidden>
+                        <p class="file-info" id="file-info">No file selected</p>
+                    </div>
+
+                    <div class="options-container">
+                        <h2>Obfuscation Options</h2>
+                        
+                        <div class="option-group">
+                            <h3>Preset Levels</h3>
+                            <div class="radio-group">
+                                <label>
+                                    <input type="radio" name="preset" value="none" checked>
+                                    <span>Custom</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="preset" value="min">
+                                    <span>Minimal</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="preset" value="mid">
+                                    <span>Medium</span>
+                                </label>
+                                <label>
+                                    <input type="radio" name="preset" value="max">
+                                    <span>Maximum</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="option-group custom-options">
+                            <h3>Custom Options</h3>
+                            <div class="checkbox-grid">
+                                <label>
+                                    <input type="checkbox" name="controlFlow" checked>
+                                    <span>Control Flow Obfuscation</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="stringEncoding" checked>
+                                    <span>String Encoding</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="variableRenaming" checked>
+                                    <span>Variable Renaming</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="garbageCode" checked>
+                                    <span>Garbage Code Injection</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="opaquePredicates">
+                                    <span>Opaque Predicates</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="functionInlining">
+                                    <span>Function Inlining</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="dynamicCode">
+                                    <span>Dynamic Code</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="compressor" checked>
+                                    <span>Compressor</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="bytecodeEncoder">
+                                    <span>Bytecode Encoder</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="stringToExpressions">
+                                    <span>String to Expressions</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="vmGenerator" checked>
+                                    <span>VM Generator</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="wrapInFunction" checked>
+                                    <span>Wrap in Function</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button type="submit" id="obfuscate-btn" disabled>
+                            <i class="fas fa-lock"></i> Obfuscate
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="result-container" style="display: none;">
+                <h2>Obfuscated Code</h2>
+                <div class="code-container">
+                    <pre id="result-code"></pre>
+                </div>
+                <div class="action-buttons">
+                    <button id="download-btn">
+                        <i class="fas fa-download"></i> Download as .lua
+                    </button>
+                    <button id="copy-btn">
+                        <i class="fas fa-copy"></i> Copy to Clipboard
+                    </button>
+                    <button id="new-file-btn">
+                        <i class="fas fa-file"></i> Obfuscate Another File
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <div id="loading-overlay" style="display: none;">
+            <div class="spinner"></div>
+            <p>Obfuscating your code...</p>
+        </div>
+
+        <footer>
+            <p>
+                Powered by <a href="https://github.com/zeusssz/hercules-obfuscator" target="_blank">Hercules Obfuscator</a> | 
+                <a href="https://zeusssz.github.io/hercules-discord/" target="_blank"><i class="fab fa-discord"></i> Join Discord</a> | 
+                Web Interface &copy; 2025
+            </p>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
