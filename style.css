@@ -9,9 +9,6 @@ body {
     background-color: #0a0d14;
     color: white;
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .grid-background {
@@ -27,16 +24,20 @@ body {
     z-index: -1;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Updated navbar styles */
 .navbar {
-    background: rgba(13, 17, 23, 0.7);
-    backdrop-filter: blur(10px);
-    padding: 1.5rem 2.5rem;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    gap: 2rem;
+    padding: 1.5rem 0;
+    position: relative;
+    z-index: 10;
 }
 
 .nav-brand {
@@ -65,14 +66,69 @@ body {
     text-decoration: none;
     font-size: 0.9rem;
     font-weight: 500;
-    transition: all 0.2s ease;
-    padding: 0.5rem 0.75rem;
-    border-radius: 6px;
+    transition: color 0.2s ease;
 }
 
 .nav-link:hover {
     color: #ffffff;
-    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Hero section */
+.hero {
+    text-align: center;
+    padding: 6rem 0;
+    position: relative;
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, #ffffff, #00b8d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #8b95a5;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #00b8d4;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #00a0b8;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    border: 1px solid #00b8d4;
+    color: #00b8d4;
+    background-color: transparent;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(0, 184, 212, 0.1);
+    transform: translateY(-2px);
 }
 
 /* Add subtle star effect */
@@ -91,9 +147,8 @@ body {
 
 @media (max-width: 768px) {
     .navbar {
-        padding: 1.25rem;
-        width: 90%;
-        max-width: 400px;
+        flex-direction: column;
+        gap: 1rem;
     }
     
     .nav-links {
@@ -102,9 +157,16 @@ body {
         gap: 1rem;
     }
     
-    .nav-link {
-        width: 100%;
-        text-align: center;
-        padding: 0.75rem 1rem;
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
     }
 }
