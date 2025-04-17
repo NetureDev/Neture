@@ -1,183 +1,56 @@
+/* Basic reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background-color: #0a0d14;
-    color: white;
-    min-height: 100vh;
-    position: relative;
-    overflow-x: hidden;
-}
-
-.grid-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        linear-gradient(rgba(10, 13, 20, 0.8) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(10, 13, 20, 0.8) 1px, transparent 1px),
-        radial-gradient(circle at 50% 50%, transparent 0%, rgba(10, 13, 20, 0.9) 100%);
-    background-size: 40px 40px, 40px 40px, 100% 100%;
-    z-index: -1;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
+/* Navbar Styling */
 .navbar {
     display: flex;
-    flex-direction: column;
+    justify-content: center; /* centers the nav horizontally */
     align-items: center;
-    padding: 2rem 0;
-    gap: 1.5rem;
-    margin-top: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #0e0e0e; /* dark background */
+    padding: 1rem 2rem;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
 
-.nav-brand {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    text-decoration: none;
-    color: #00b8d4;
+/* Gradient text effect for brand */
+.logo .brand {
     font-size: 1.5rem;
     font-weight: bold;
-}
-
-.star {
-    color: #00b8d4;
-}
-
-.nav-links {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-}
-
-.nav-link {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-    position: relative;
-}
-
-.nav-link:hover {
-    color: #00b8d4;
-}
-
-.nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #00b8d4;
-    transition: width 0.3s ease;
-}
-
-.nav-link:hover::after {
-    width: 100%;
-}
-
-.hero {
-    text-align: center;
-    padding: 6rem 0;
-    position: relative;
-}
-
-h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    background: linear-gradient(to right, #ffffff, #00b8d4);
+    background: linear-gradient(135deg, #f97316, #8b5cf6); /* same gradient as hero title */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.subtitle {
-    font-size: 1.1rem;
-    color: #8b95a5;
-    margin-bottom: 2.5rem;
-    line-height: 1.6;
+/* Icon next to brand */
+.logo .star {
+    color: #facc15;
+    margin-right: 0.5rem;
 }
 
-.cta-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-}
-
-.btn {
-    padding: 0.8rem 1.5rem;
-    border-radius: 50px;
+/* Nav links styling */
+.nav-link {
+    color: #f3f4f6;
     text-decoration: none;
+    margin: 0 1rem;
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
 }
 
-.btn-primary {
-    background-color: #00b8d4;
-    color: white;
+.nav-link:hover {
+    color: #a78bfa;
 }
 
-.btn-primary:hover {
-    background-color: #00a0b8;
-    transform: translateY(-2px);
-}
-
-.btn-secondary {
-    border: 1px solid #00b8d4;
-    color: #00b8d4;
-    background-color: transparent;
-}
-
-.btn-secondary:hover {
-    background-color: rgba(0, 184, 212, 0.1);
-    transform: translateY(-2px);
-}
-
-/* Add some random stars */
-.grid-background::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(circle at center, #ffffff 1px, transparent 1px);
-    background-size: 100px 100px;
-    opacity: 0.1;
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    .navbar {
-        padding: 1rem;
-    }
-    
-    .nav-links {
-        flex-direction: column;
-        gap: 1rem;
-    }
-    
-    h1 {
-        font-size: 2.5rem;
-    }
-    
-    .subtitle {
-        font-size: 1rem;
-    }
-    
-    .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
+/* Adjust body to compensate for fixed nav */
+body {
+    padding-top: 80px;
+    background-color: #0a0a0a;
+    color: #f3f3f3;
+    font-family: sans-serif;
 }
