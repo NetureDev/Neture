@@ -7,7 +7,7 @@
 body {
     font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background-color: #0a0d14;
-    color: white;
+    color: #a8ffb0; /* Light green text */
     min-height: 100vh;
 }
 
@@ -32,7 +32,6 @@ body {
     padding: 0 2rem;
 }
 
-/* Navbar styles */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -72,10 +71,9 @@ body {
 }
 
 .nav-link:hover {
-    color: #ffffff;
+    color: #00ff9d;
 }
 
-/* Hero section */
 .hero {
     display: flex;
     flex-direction: column;
@@ -91,7 +89,7 @@ h1 {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
-    background: linear-gradient(to right, #ffffff, #00e676);
+    background: linear-gradient(to right, #00e676, #00c853);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     position: relative;
@@ -106,12 +104,12 @@ h1::after {
     transform: translateX(-50%);
     width: 200px;
     height: 3px;
-    background: linear-gradient(to right, #ffffff, #00e676);
+    background: linear-gradient(to right, #00e676, #00c853);
 }
 
 .subtitle {
     font-size: 1.1rem;
-    color: #8b95a5;
+    color: #a0f2ae;
     margin-bottom: 2.5rem;
     line-height: 1.6;
     position: relative;
@@ -126,12 +124,12 @@ h1::after {
     transform: translateX(-50%);
     width: 150px;
     height: 2px;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(0, 230, 118, 0.3));
+    background: linear-gradient(to right, rgba(0, 255, 140, 0.3), rgba(0, 184, 90, 0.3));
 }
 
 .sub-subtitle {
     font-size: 1rem;
-    color: #8b95a5;
+    color: #a0f2ae;
     margin-top: -1rem;
     margin-bottom: 2rem;
     position: relative;
@@ -146,7 +144,7 @@ h1::after {
     transform: translateX(-50%);
     width: 100px;
     height: 1px;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.15), rgba(0, 230, 118, 0.15));
+    background: linear-gradient(to right, rgba(0, 255, 140, 0.15), rgba(0, 184, 90, 0.15));
 }
 
 .cta-buttons {
@@ -172,12 +170,12 @@ h1::after {
 
 .btn-primary {
     background-color: #00e676;
-    color: white;
+    color: #0a0d14;
     box-shadow: 0 6px 20px rgba(0, 230, 118, 0.3);
 }
 
 .btn-primary:hover {
-    background-color: #00c464;
+    background-color: #00c853;
     transform: translateY(-3px);
     box-shadow: 0 8px 30px rgba(0, 230, 118, 0.4);
 }
