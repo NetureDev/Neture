@@ -18,9 +18,11 @@ body {
     width: 100%;
     height: 100%;
     background-image: 
-        linear-gradient(rgba(10, 13, 20, 0.8) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(10, 13, 20, 0.8) 1px, transparent 1px);
-    background-size: 40px 40px;
+        linear-gradient(rgba(10, 13, 20, 0.3) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(10, 13, 20, 0.3) 1px, transparent 1px),
+        linear-gradient(rgba(10, 13, 20, 0.2) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(10, 13, 20, 0.2) 2px, transparent 2px);
+    background-size: 25px 25px, 25px 25px, 100px 100px, 100px 100px;
     z-index: -1;
 }
 
@@ -30,7 +32,7 @@ body {
     padding: 0 2rem;
 }
 
-/* Updated navbar styles */
+/* Navbar styles */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -78,6 +80,9 @@ body {
     text-align: center;
     padding: 6rem 0;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
@@ -87,6 +92,20 @@ h1 {
     background: linear-gradient(to right, #ffffff, #00b8d4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+/* Line under the main title */
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 3px;
+    background: linear-gradient(to right, #ffffff, #00b8d4);
 }
 
 .subtitle {
@@ -94,34 +113,56 @@ h1 {
     color: #8b95a5;
     margin-bottom: 2.5rem;
     line-height: 1.6;
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+/* Line under the subtitle */
+.subtitle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 2px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.3), rgba(0, 184, 212, 0.3));
 }
 
 .cta-buttons {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     justify-content: center;
+    margin-top: 3rem;
 }
 
 .btn {
-    padding: 0.8rem 1.5rem;
+    padding: 1rem 2.5rem;
     border-radius: 50px;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
+    font-size: 1.1rem;
+    min-width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-primary {
     background-color: #00b8d4;
     color: white;
+    box-shadow: 0 4px 15px rgba(0, 184, 212, 0.3);
 }
 
 .btn-primary:hover {
     background-color: #00a0b8;
     transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 184, 212, 0.4);
 }
 
 .btn-secondary {
-    border: 1px solid #00b8d4;
+    border: 2px solid #00b8d4;
     color: #00b8d4;
     background-color: transparent;
 }
@@ -129,20 +170,7 @@ h1 {
 .btn-secondary:hover {
     background-color: rgba(0, 184, 212, 0.1);
     transform: translateY(-2px);
-}
-
-/* Add subtle star effect */
-.grid-background::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: 
-        radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-        radial-gradient(circle at 80% 40%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-        radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-        radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-    background-size: 100% 100%;
+    box-shadow: 0 6px 20px rgba(0, 184, 212, 0.2);
 }
 
 @media (max-width: 768px) {
@@ -168,5 +196,10 @@ h1 {
     .cta-buttons {
         flex-direction: column;
         align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 300px;
     }
 }
