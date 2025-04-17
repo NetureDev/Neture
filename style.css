@@ -1,4 +1,3 @@
-/* Reset and base styling */
 * {
     margin: 0;
     padding: 0;
@@ -6,26 +5,22 @@
 }
 
 body {
-    padding-top: 80px;
     background-color: #0a0a0a;
-    color: #f3f3f3;
+    color: #fff;
     font-family: sans-serif;
 }
 
-/* Navbar styling */
 .navbar {
     position: fixed;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: max-content;
-    background: #0e0e0e;
-    padding: 1rem 2rem;
+    background-color: #111;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 1rem 2rem;
     z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     border-radius: 12px;
 }
 
@@ -64,7 +59,6 @@ body {
     color: #a78bfa;
 }
 
-/* Hero section */
 .hero {
     text-align: center;
     padding: 5rem 2rem 2rem;
@@ -116,7 +110,6 @@ body {
     background-color: #ea580c;
 }
 
-/* Background stars */
 .stars-container {
     position: fixed;
     width: 100%;
