@@ -1,34 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>neture.ss</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>raii.xyz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
+    <link href="styles.css?v=1.8" rel="stylesheet">
 </head>
 <body>
-    <div class="grid-background"></div>
-    <div class="container">
-        <nav class="navbar">
-            <a href="#" class="nav-brand">
-                <span class="star">★</span>
-                Neture
-            </a>
-            <div class="nav-links">
-                <a href="dashboard" class="nav-link">Dashboard</a>
-                <a href="tos" class="nav-link">TOS</a>
-                <a href="prices" class="nav-link">Pricing</a>
-            </div>
-        </nav>
 
-        <main class="hero">
-            <h1>neture.ss</h1>
-            <p class="subtitle">A Roblox Internal Executor. Useful for executing server-side scripts.</p>
-            <div class="cta-buttons">
-                <a href="start" class="btn btn-primary">Begin Experience →</a>
-                <a href="discord" class="btn btn-secondary">Discord →</a>
+    <div id="particles-js"></div>
+
+    <div class="container">
+        <div class="logo">RAII<span>.XYZ</span></div>
+        <div class="subtitle">ENHANCE YOUR AR2 EXPERIENCE</div>
+        <div class="buttons">
+            <a href="https://discord.gg/FkXNEHm6PS" class="btn" target="_blank">Join Discord</a>
+            <a href="https://shoppy.gg/product/FyNS6AA" class="btn buy" target="_blank">Buy for €7.5</a>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <h3>Extra-Sensory Perception</h3>
+                <p>Character, Corpses, Loot, Vehicles</p>
             </div>
-        </main>
+            <div class="feature-card">
+                <h3>Combat Advantage</h3>
+                <p>Silent Aim, Body Expander, Knife Aura, FastKnife</p>
+            </div>
+            <div class="feature-card">
+                <h3>Client Mods</h3>
+                <p>Infinite Jump, Container Persistence, Auto-Loot Bins, Open-bins with Inventory, Vehicle Mods & More </p>
+            </div>
+            <div class="feature-card">
+                <h3>Misc</h3>
+                <p>Custom Sky, Fullbright & More</p>
+            </div>
+        </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 100, density: { enable: true, value_area: 800 } },
+                color: { value: "#ffffff" },
+                shape: { type: "circle" },
+                opacity: {
+                    value: 0.3,
+                    random: true,
+                    anim: { enable: true, speed: 1, opacity_min: 0.05 }
+                },
+                size: { value: 1, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 100,
+                    color: "#ffffff",
+                    opacity: 0.05,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 1.5,
+                    direction: "none",
+                    random: true,
+                    straight: false,
+                    out_mode: "out"
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: { enable: false },
+                    onclick: { enable: false },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+
 </body>
 </html>
